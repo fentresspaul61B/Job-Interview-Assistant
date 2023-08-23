@@ -79,7 +79,7 @@ def get_chat_lang_chain_response(text, lang_chain_conversation):
     Calls the chat GPT API with context.
     """
 
-    response = conversation.predict(input=text)
+    response = lang_chain_conversation.predict(input=text)
 
     return response
 
