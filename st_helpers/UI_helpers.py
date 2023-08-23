@@ -50,6 +50,7 @@ PRODUCTION_GOOGLE_FONT = "css2?family=Roboto:wght@100&display=swap"
 def apply_font_to_st_page(
         font_url: str = PRODUCTION_FONT_URL,
         font:     str = PRODUCTION_GOOGLE_FONT
+        class_to_alter: str = "css"
     ):
     """
     This function uses css and streamlit markdown to alter the font of 
@@ -65,7 +66,7 @@ def apply_font_to_st_page(
 	<style>
      @import url('{font_url}/{font}');
        
-	html, body [class*="css"]  {{
+	html, body [class*="{class_to_alter}"]  {{
 	    font-family: 'Roboto', 
         sans-serif;
 	}}
@@ -118,7 +119,7 @@ def apply_gradient_to_st_page(
             }}
         }}
 
-        html, body [class*="main css-uf99v8 ea3mdgi5"], element-container {{
+        html, body [class*="main css-uf99v8 ea3mdgi5"] {{
             font-family: 'Roboto', sans-serif !important;
             {gradient}
             background-size: 200% 200%;
@@ -141,6 +142,8 @@ def add_theme():
     
     # 1. Change font.
     apply_font_to_st_page()
+
+    apply_font_to_st_page("element-container")
 
     # 2. Dynamic gradient background.
     apply_gradient_to_st_page(TEST_GRADIENT)
