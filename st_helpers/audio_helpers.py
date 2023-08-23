@@ -52,9 +52,11 @@ AI:"""
 
 def configure_lang_chain(template=template):
 
-    llm = ChatOpenAI(model_name='gpt-4',
-             temperature=0,
-             max_tokens = 256)
+    llm = ChatOpenAI(
+        model_name='gpt-4',
+        temperature=0,
+        max_tokens = 256
+    )
 
     prompt = PromptTemplate(
         input_variables=["history", "input"], template=template
