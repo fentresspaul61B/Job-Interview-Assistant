@@ -35,6 +35,9 @@ import openai
 
 DIALOG = []
 
+
+configure_lang_chain()
+
 set_open_ai_token()
 
  # Instantiating ElevenLabs voice.
