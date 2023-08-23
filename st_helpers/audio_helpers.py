@@ -34,7 +34,7 @@ CONTEXT_PROMPT = """You are a helpful assistant."""
 
 template = """The following is a friendly conversation between a human and an AI. The AI is not talkative, and gives concise questions and answers. 
 In this conversation the AI is role playing as a caring and smart engineering manager who is intervewing a canidate for a machine learning engineering position. 
-The AI should ask the canidate questions about their ML projects, ML theory, and their applied ML.
+The AI should ask the canidate questions about their ML projects, ML theory, and applied ML.
 If the AI does not know the answer to a question, it truthfully says it does not know. The AI ONLY uses information contained in the "Relevant Information" section and does not hallucinate.
 
 Relevant Information:
@@ -44,6 +44,8 @@ Relevant Information:
 Conversation:
 Human: {input}
 AI:"""
+
+
 
 def configure_lang_chain(template=template):
 
@@ -67,6 +69,14 @@ def configure_lang_chain(template=template):
     return conversation
 
 
+def get_chat_lang_chain_response(text, lang_chain_conversation=lang_chain_conversation):
+    """
+    Calls the chat GPT API with context.
+    """
+
+    response = conversation.predict(input=text)
+
+    return response
 
 
 def get_chat_gpt_response(prompt, context=CONTEXT_PROMPT):
