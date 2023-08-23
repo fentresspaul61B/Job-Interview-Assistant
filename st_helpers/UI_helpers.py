@@ -146,7 +146,7 @@ def add_theme():
 
     apply_gradient_to_st_page(
         TEST_GRADIENT, 
-        class_to_alter = "element-container css-4le0b0 e1f1d6gn2")
+        class_to_alter = "body")
     
 
 
