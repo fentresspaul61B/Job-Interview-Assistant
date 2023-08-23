@@ -143,9 +143,9 @@ def add_theme():
     # 1. Change font.
     apply_font_to_st_page()
 
-    apply_font_to_st_page("element-container")
-
     # 2. Dynamic gradient background.
     apply_gradient_to_st_page(TEST_GRADIENT)
     
+
+    apply_font_to_st_page("element-container")
 
