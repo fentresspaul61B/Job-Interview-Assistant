@@ -144,12 +144,14 @@ def add_theme():
     # 1. Change font.
     apply_font_to_st_page()
 
+    apply_gradient_to_st_page(
+        TEST_GRADIENT, 
+        class_to_alter = "element-container css-4le0b0 e1f1d6gn2")
+    
+
+
+
     # 2. Dynamic gradient background.
     apply_gradient_to_st_page(TEST_GRADIENT)
     
-    apply_gradient_to_st_page(
-            TEST_GRADIENT, 
-            class_to_alter = "element-container css-4le0b0 e1f1d6gn2")
-    
-
 
