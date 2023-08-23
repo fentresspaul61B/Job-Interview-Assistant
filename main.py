@@ -27,6 +27,8 @@ from st_helpers.audio_helpers import get_audio_duration
 from st_helpers.audio_helpers import generate_eleven_labs_audio 
 from st_helpers.audio_helpers import set_open_ai_token 
 from st_helpers.audio_helpers import get_chat_gpt_response  
+from st_helpers.audio_helpers import get_chat_lang_chain_response 
+from st_helpers.audio_helpers import configure_lang_chain
 
 # Open AI used for whisper and chat GPT.
 import openai
@@ -91,10 +93,12 @@ def main():
             # st.chat_input(response)
             # Generate GPP response:
 
-            chatbot_response = get_chat_gpt_response(
-                response, 
-                context=context
-            )
+            # chatbot_response = get_chat_gpt_response(
+            #     response, 
+            #     context=context
+            # )
+
+            chatbot_response = get_chat_lang_chain_response(response)
      
             DIALOG.append({"chat_bot": chatbot_response})
 

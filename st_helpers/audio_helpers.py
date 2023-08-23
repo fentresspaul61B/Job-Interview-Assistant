@@ -20,7 +20,53 @@ from pydub.utils import mediainfo
 import openai
 
 
+from langchain.chains.conversation.memory import ConversationSummaryMemory
+from langchain import OpenAI
+from langchain.chains import ConversationChain
+from langchain.prompts.prompt import PromptTemplate
+from langchain.chat_models import ChatOpenAI
+
+
+
+
 CONTEXT_PROMPT = """You are a helpful assistant."""
+
+
+template = """The following is a friendly conversation between a human and an AI. The AI is not talkative, and gives concise questions and answers. 
+In this conversation the AI is role playing as a caring and smart engineering manager who is intervewing a canidate for a machine learning engineering position. 
+The AI should ask the canidate questions about their ML projects, ML theory, and their applied ML.
+If the AI does not know the answer to a question, it truthfully says it does not know. The AI ONLY uses information contained in the "Relevant Information" section and does not hallucinate.
+
+Relevant Information:
+
+{history}
+
+Conversation:
+Human: {input}
+AI:"""
+
+def configure_lang_chain(template=template):
+
+    llm = ChatOpenAI(model_name='gpt-4',
+             temperature=0,
+             max_tokens = 256)
+
+    prompt = PromptTemplate(
+        input_variables=["history", "input"], template=template
+    )
+
+    summary_memory = ConversationSummaryMemory(llm=OpenAI())
+
+    conversation = ConversationChain(
+        llm=llm,
+        verbose=False,
+        memory=summary_memory,
+        prompt=prompt
+    )
+
+    return conversation
+
+
 
 
 def get_chat_gpt_response(prompt, context=CONTEXT_PROMPT):
