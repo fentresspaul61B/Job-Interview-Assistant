@@ -147,7 +147,7 @@ def load_eleven_labs_voice():
     voices = Voices.from_api()  
     my_voice = voices[-1]
     my_voice.settings.stability = 1.0
-    my_voice.settings.similarity_boost = 1.0
+    my_voice.settings.similarity_boost = .5
     
     return my_voice
 
