@@ -30,8 +30,14 @@ from st_helpers.audio_helpers import get_chat_gpt_response
 from st_helpers.audio_helpers import get_chat_lang_chain_response 
 from st_helpers.audio_helpers import configure_lang_chain
 
+from st_helpers.UI_hepers import add_theme
+
 # Open AI used for whisper and chat GPT.
 import openai
+
+
+add_theme()
+
 
 DIALOG = []
 
