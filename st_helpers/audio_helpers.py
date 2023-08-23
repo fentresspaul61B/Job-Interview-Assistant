@@ -2,6 +2,9 @@
 This is the where the functionality of the dialog is defined. 
 """
 
+import sys
+print(sys.path)
+
 import streamlit as st
 import base64
 
@@ -21,10 +24,10 @@ import openai
 
 
 from langchain.chains.conversation.memory import ConversationSummaryMemory
-# from langchain import OpenAI
-# from langchain.chains import ConversationChain
-# from langchain.prompts.prompt import PromptTemplate
-# from langchain.chat_models import ChatOpenAI
+from langchain import OpenAI
+from langchain.chains import ConversationChain
+from langchain.prompts.prompt import PromptTemplate
+from langchain.chat_models import ChatOpenAI
 
 
 
