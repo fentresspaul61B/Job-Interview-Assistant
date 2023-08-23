@@ -20,7 +20,7 @@ from pydub.utils import mediainfo
 import openai
 
 
-CONTEXT_PROMPT = """You are a helpful assistant named Julie."""
+CONTEXT_PROMPT = """You are a helpful assistant."""
 
 
 def get_chat_gpt_response(prompt, context=CONTEXT_PROMPT):
