@@ -37,7 +37,8 @@ DIALOG = []
 
 set_open_ai_token()
 
-configure_lang_chain()
+LANG_CHAIN_CONVERSATION = configure_lang_chain()
+
 
  # Instantiating ElevenLabs voice.
 my_voice = load_eleven_labs_voice()
@@ -100,7 +101,10 @@ def main():
             #     context=context
             # )
 
-            chatbot_response = get_chat_lang_chain_response(response)
+            chatbot_response = get_chat_lang_chain_response(
+                response,
+                conversation=LANG_CHAIN_CONVERSATION
+            )
      
             DIALOG.append({"chat_bot": chatbot_response})
 
