@@ -80,7 +80,8 @@ def apply_font_to_st_page(
 def apply_gradient_to_st_page(
         gradient: str,
         font_url: str = PRODUCTION_FONT_URL,
-        font:     str = PRODUCTION_GOOGLE_FONT
+        font:     str = PRODUCTION_GOOGLE_FONT,
+        class_to_alter: str = "main css-uf99v8 ea3mdgi5" 
     ):
     """
     This function uses css and streamlit markdown to apply a morphing 
@@ -119,7 +120,7 @@ def apply_gradient_to_st_page(
             }}
         }}
 
-        html, body [class*="main css-uf99v8 ea3mdgi5"] {{
+        html, body [class*={class_to_alter}] {{
             font-family: 'Roboto', sans-serif !important;
             {gradient}
             background-size: 200% 200%;
@@ -146,6 +147,9 @@ def add_theme():
     # 2. Dynamic gradient background.
     apply_gradient_to_st_page(TEST_GRADIENT)
     
+    apply_gradient_to_st_page(
+            TEST_GRADIENT, 
+            class_to_alter = "element-container css-4le0b0 e1f1d6gn2")
+    
 
-    apply_font_to_st_page("element-container")
 
