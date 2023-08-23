@@ -146,7 +146,7 @@ def add_theme():
 
     apply_gradient_to_st_page(
         TEST_GRADIENT, 
-        class_to_alter = "body")
+        class_to_alter = "svg-inline--fa fa-square fa-3x")
     
 
 
