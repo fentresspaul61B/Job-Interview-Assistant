@@ -62,7 +62,7 @@ def main():
     if user_input == st.secrets["USER_PW"]:
         
         
-        context = st.text_area("Enter Context")
+        # context = st.text_area("Enter Context")
 
         # If the password is correct, then the dialog can start.
 
