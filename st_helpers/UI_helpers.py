@@ -145,13 +145,13 @@ def add_theme():
     apply_font_to_st_page()
 
     apply_gradient_to_st_page(
-        TEST_GRADIENT, 
+        LIGHT_GRADIENT, 
         class_to_alter = "svg-inline--fa fa-square fa-3x")
     
 
 
 
     # 2. Dynamic gradient background.
-    apply_gradient_to_st_page(TEST_GRADIENT)
+    apply_gradient_to_st_page(LIGHT_GRADIENT)
     
 
