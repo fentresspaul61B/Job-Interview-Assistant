@@ -30,7 +30,7 @@ from langchain.prompts.prompt import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 
 
-
+import os
 
 CONTEXT_PROMPT = """You are a helpful assistant."""
 
