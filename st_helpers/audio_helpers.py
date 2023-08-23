@@ -62,7 +62,7 @@ def configure_lang_chain(template=template):
         input_variables=["history", "input"], template=template
     )
 
-    summary_memory = ConversationSummaryMemory(llm=OpenAI())
+    summary_memory = ConversationSummaryMemory(llm=llm)
 
     conversation = ConversationChain(
         llm=llm,
