@@ -69,7 +69,7 @@ def configure_lang_chain(template=template):
     return conversation
 
 
-def get_chat_lang_chain_response(text, lang_chain_conversation=lang_chain_conversation):
+def get_chat_lang_chain_response(text, lang_chain_conversation):
     """
     Calls the chat GPT API with context.
     """
