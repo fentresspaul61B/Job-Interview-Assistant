@@ -48,7 +48,7 @@ def main():
     Runs dialog after password is confirmed.
     """
     
-    st.title("Mentia Statistical Dialog Model")
+    st.title("Job Interview Dialog Model")
 
     user_input = st.text_input("Enter Password", type="password")
 
