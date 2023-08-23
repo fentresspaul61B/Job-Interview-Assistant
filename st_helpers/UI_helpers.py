@@ -117,7 +117,7 @@ def apply_gradient_to_st_page(
             }}
         }}
 
-        html, body [class*="main css-uf99v8 ea3mdgi5"] {{
+        html, body [class*="main css-uf99v8 ea3mdgi5", class*="element-container css-1ims0h4 e1f1d6gn2"] {{
             font-family: 'Roboto', sans-serif !important;
             {gradient}
             background-size: 200% 200%;
