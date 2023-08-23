@@ -120,7 +120,7 @@ def apply_gradient_to_st_page(
             }}
         }}
 
-        html, body [class*={class_to_alter}] {{
+        html, body [class*="{class_to_alter}"] {{
             font-family: 'Roboto', sans-serif !important;
             {gradient}
             background-size: 200% 200%;
