@@ -49,7 +49,7 @@ PRODUCTION_GOOGLE_FONT = "css2?family=Roboto:wght@100&display=swap"
 
 def apply_font_to_st_page(
         font_url: str = PRODUCTION_FONT_URL,
-        font:     str = PRODUCTION_GOOGLE_FONT
+        font:     str = PRODUCTION_GOOGLE_FONT,
         class_to_alter: str = "css"
     ):
     """
