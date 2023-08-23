@@ -20,7 +20,7 @@ from pydub.utils import mediainfo
 import openai
 
 
-# from langchain.chains.conversation.memory import ConversationSummaryMemory
+from langchain.chains.conversation.memory import ConversationSummaryMemory
 # from langchain import OpenAI
 # from langchain.chains import ConversationChain
 # from langchain.prompts.prompt import PromptTemplate
