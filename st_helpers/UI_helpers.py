@@ -141,6 +141,12 @@ def add_theme():
     3. Add the side bar, with the logo gif.
     """
     
+    st.set_page_config(
+        page_title="MLE Interview Assistant",
+        page_icon="🐠",
+        layout="wide"
+    )
+
     # 1. Change font.
     apply_font_to_st_page()
 
