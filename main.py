@@ -83,11 +83,11 @@ def main():
         # do not conflict with eachother. Uses custom st package. May 
         # need maintenence.
         audio_bytes = audio_recorder(
-                key="123", 
-                icon_name="square",
-                recording_color="#e8b62c",
-                neutral_color="#6aa36f",
-                text=""
+            key="123", 
+            icon_name="square",
+            recording_color="#e8b62c",
+            neutral_color="#6aa36f",
+            text=""
         )
            
         # Check if the session state has the 'processed' attribute
@@ -131,8 +131,8 @@ def main():
             with open('STT.wav', mode='wb') as f:
                 f.write(audio)
 
-            # Sleep time is used, so that st does not re run until audio is 
-            # finished playing.
+            # Sleep time is used, so that st does not re run until audio 
+            # is finished playing.
             sleep_time = get_audio_duration("STT.wav")
 
             # Pause to refresh until output audio is completed.
