@@ -152,7 +152,7 @@ def set_open_ai_token():
     """
     Configures open AI token.
     """    
-    # Openai used for whisper and GPT
+    # Openai used for whisper and GPT.
     
     try:
         OPEN_AI_TOKEN = st.secrets["OPEN_AI_TOKEN"]
@@ -162,7 +162,7 @@ def set_open_ai_token():
         with open("secrets.json") as f:
             OPEN_AI_TOKEN = json.load(f)["OPEN_AI_TOKEN"]
 
-    # Setting the Open AI Key
+    # Setting the Open AI key.
     openai.api_key = OPEN_AI_TOKEN
     os.environ['OPENAI_API_KEY'] = OPEN_AI_TOKEN
 
@@ -173,7 +173,7 @@ def load_eleven_labs_voice():
     Loads and configures a voice from eleven labs.
     """
     
-    # Extracting the eleven labs token
+    # Extracting the eleven labs token.
     
     try:
         ELEVEN_LABS_TOKEN = st.secrets["ELEVEN_LABS_TOKEN"]
@@ -182,8 +182,7 @@ def load_eleven_labs_voice():
 
         with open("secrets.json") as f:
             ELEVEN_LABS_TOKEN = json.load(f)["ELEVEN_LABS_TOKEN"]
-
-    
+ 
     # Configure token.
     set_api_key(ELEVEN_LABS_TOKEN)
     
