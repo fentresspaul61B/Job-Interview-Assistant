@@ -30,7 +30,7 @@ from st_helpers.audio_helpers import get_chat_gpt_response
 from st_helpers.audio_helpers import get_chat_lang_chain_response 
 from st_helpers.audio_helpers import configure_lang_chain
 from st_helpers.audio_helpers import generate_chat_response
-
+from st_helpers.audio_helpers import create_context
 
 
 
@@ -63,8 +63,9 @@ def main():
     if user_input == st.secrets["USER_PW"]:
         
         
-        # context = st.text_area("Enter Context")
-
+        context = st.text_area("Enter Context")
+        
+        context = create_context(context)
         # If the password is correct, then the dialog can start.
 
         st.write("Press the button below to record audio.")
@@ -108,7 +109,7 @@ def main():
             #     context=context
             # )
             
-            LANG_CHAIN_CONVERSATION = configure_lang_chain()
+            LANG_CHAIN_CONVERSATION = configure_lang_chain(context)
 
 
             chatbot_response = get_chat_lang_chain_response(
