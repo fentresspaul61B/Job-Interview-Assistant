@@ -50,6 +50,38 @@ AI:"""
 
 
 
+
+@st.cache_data(allow_output_mutation=True)
+def generate_chat_response(text: str, template=template):
+
+    llm = ChatOpenAI(
+        model_name='gpt-4',
+        temperature=0,
+        max_tokens = 256
+    )
+
+    prompt = PromptTemplate(
+        input_variables=["history", "input"], template=template
+    )
+
+    summary_memory = ConversationSummaryMemory(llm=llm)
+
+    conversation = ConversationChain(
+        llm=llm,
+        verbose=False,
+        memory=summary_memory,
+        prompt=prompt
+    )
+
+    response = conversation.predict(input=text)
+
+    return response
+
+
+
+
+
+@st.cache_data()
 def configure_lang_chain(template=template):
 
     llm = ChatOpenAI(

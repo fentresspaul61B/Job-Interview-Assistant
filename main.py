@@ -29,6 +29,10 @@ from st_helpers.audio_helpers import set_open_ai_token
 from st_helpers.audio_helpers import get_chat_gpt_response  
 from st_helpers.audio_helpers import get_chat_lang_chain_response 
 from st_helpers.audio_helpers import configure_lang_chain
+from st_helpers.audio_helpers import generate_chat_response
+
+
+
 
 from st_helpers.UI_helpers import add_theme
 
@@ -43,7 +47,7 @@ DIALOG = []
 
 set_open_ai_token()
 
-LANG_CHAIN_CONVERSATION = configure_lang_chain()
+# LANG_CHAIN_CONVERSATION = configure_lang_chain()
 
 
  # Instantiating ElevenLabs voice.
@@ -107,11 +111,13 @@ def main():
             #     context=context
             # )
 
-            chatbot_response = get_chat_lang_chain_response(
-                response,
-                lang_chain_conversation=LANG_CHAIN_CONVERSATION
-            )
+            # chatbot_response = get_chat_lang_chain_response(
+            #     response,
+            #     lang_chain_conversation=LANG_CHAIN_CONVERSATION
+            # )
      
+            chatbot_response = generate_chat_response(response)
+
             DIALOG.append({"chat_bot": chatbot_response})
 
             # st.chat_message(chatbot_response)
