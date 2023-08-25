@@ -71,7 +71,7 @@ AI:"""
 
 
 
-    return prompt
+    return template
 
 
 @st.cache_resource
