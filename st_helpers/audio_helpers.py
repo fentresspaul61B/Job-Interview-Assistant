@@ -2,10 +2,10 @@
 This is the where the functionality of the dialog is defined. 
 """
 
-import sys
-print(sys.path)
-
+# Streamlit used for caching in the UI.
 import streamlit as st
+
+# Base 64 used for automatically playing audio in UI.
 import base64
 
 # Eleven labs is used for generating realistic sound speech.
@@ -13,23 +13,24 @@ from elevenlabs import generate, play, Voices
 from elevenlabs import set_api_key
 from elevenlabs.api import Voices
 
-# import librosa
-
+# Json used for extracting and formatting secrets file.
 import json
-import time
 
+# Pydub mediainfo used for computing the length in seconds of audio. 
 from pydub.utils import mediainfo
 
+# Open AI used for text generation. 
 import openai
 
-
+# Lang chain used to create memory for open AI api calls, as well as 
+# summarize the conversation so far. 
 from langchain.chains.conversation.memory import ConversationSummaryMemory
 from langchain import OpenAI
 from langchain.chains import ConversationChain
 from langchain.prompts.prompt import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 
-
+# OS used to set environment variables. 
 import os
 
 CONTEXT_PROMPT = """You are a helpful assistant."""
@@ -50,6 +51,10 @@ AI:"""
 
 
 def create_context(job_description: str):
+    """
+    Uses a string of a job description (input from user) to create 
+    prompt for dialog and MLE interview.  
+    """
     
     template = f"""The following is a friendly conversation between a human and an AI. The AI is not talkative, and gives concise questions and answers. 
 In this conversation the AI is role playing as a caring and smart engineering manager who is intervewing a canidate for a machine learning engineering position. 
@@ -68,8 +73,6 @@ Relevant Information:
 Conversation:
 Human: {{input}}
 AI:"""
-
-
 
     return template
 
@@ -101,24 +104,28 @@ def generate_chat_response(text: str, template=template):
     return response
 
 
-
-
-
 @st.cache_resource
 def configure_lang_chain(template=template):
+    """
+    Sets up lang chain chat conversation with memory.
+    """
 
+    # Choose the LLM to use.
     llm = ChatOpenAI(
         model_name='gpt-4',
         temperature=0,
         max_tokens = 256
     )
-
+    
+    # Generate the prompt.
     prompt = PromptTemplate(
         input_variables=["history", "input"], template=template
     )
 
+    # set method of memory.
     summary_memory = ConversationSummaryMemory(llm=llm)
 
+    # Instantiate chat conversation object. 
     conversation = ConversationChain(
         llm=llm,
         verbose=False,
@@ -131,9 +138,10 @@ def configure_lang_chain(template=template):
 
 def get_chat_lang_chain_response(text, lang_chain_conversation):
     """
-    Calls the chat GPT API with context.
+    Calls the chat GPT API with context and memory.
     """
 
+    # Generate response from text, with memory.
     response = lang_chain_conversation.predict(input=text)
 
     return response
@@ -245,4 +253,5 @@ def get_audio_duration(filename: str) -> float:
     info = mediainfo(filename)
     duration = float(info['duration'])
     return duration
+
 

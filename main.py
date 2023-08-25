@@ -26,14 +26,12 @@ from st_helpers.audio_helpers import autoplay_audio_from_bytes
 from st_helpers.audio_helpers import get_audio_duration
 from st_helpers.audio_helpers import generate_eleven_labs_audio 
 from st_helpers.audio_helpers import set_open_ai_token 
-from st_helpers.audio_helpers import get_chat_gpt_response  
 from st_helpers.audio_helpers import get_chat_lang_chain_response 
 from st_helpers.audio_helpers import configure_lang_chain
 from st_helpers.audio_helpers import generate_chat_response
 from st_helpers.audio_helpers import create_context
 
-
-
+# Used to edit the default streamlit UI themes. 
 from st_helpers.UI_helpers import add_theme
 
 # Open AI used for whisper and chat GPT.
@@ -41,7 +39,6 @@ import openai
 
 
 add_theme()
-
 
 DIALOG = []
 
@@ -53,7 +50,7 @@ my_voice = load_eleven_labs_voice()
 
 def main():
     """
-    Runs dialog after password is confirmed.
+    Creates UI and runs dialog after password is confirmed.
     """
     
     st.title("Job Interview Dialog Model")
@@ -100,14 +97,6 @@ def main():
             # Creating audio byte string.
 
             DIALOG.append({"user": response})
-
-            # st.chat_input(response)
-            # Generate GPP response:
-
-            # chatbot_response = get_chat_gpt_response(
-            #     response, 
-            #     context=context
-            # )
             
             LANG_CHAIN_CONVERSATION = configure_lang_chain(context)
 
