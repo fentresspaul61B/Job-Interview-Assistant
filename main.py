@@ -46,6 +46,9 @@ DIALOG = []
 # Creating limit for job description length. 
 MAX_CHARS_JOB_DESCRIPT = 1000
 
+# Audio pause threshold, how long of silence before recording stops.
+PAUSE_THRESHOLD =4.0
+
 # Configires open AI settings.
 set_open_ai_token()
 
@@ -83,7 +86,8 @@ def main():
         # do not conflict with eachother. Uses custom st package. May 
         # need maintenence.
         audio_bytes = audio_recorder(
-            key="123", 
+            key="123",
+            pause_threshold=PAUSE_THRESHOLD,
             icon_name="square",
             recording_color="#e8b62c",
             neutral_color="#6aa36f",
@@ -138,13 +142,13 @@ def main():
             # Pause to refresh until output audio is completed.
             time.sleep(sleep_time)
 
-            # Set the 'processed' flag
+            # Set the 'processed' flag.
             st.session_state.processed = True
 
-            # Rerun the app
+            # Rerun the app.
             st.experimental_rerun()
     
-        # Reset audio_bytes and processed flag for the next interaction
+        # Reset audio_bytes and processed flag for the next interaction.
         audio_bytes = None
         st.session_state.processed = False
 
