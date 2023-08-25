@@ -67,7 +67,7 @@ def main():
     # Only allow for interview if password is valid.
     if user_input == st.secrets["USER_PW"]:
         
-        # Text box for job description.. 
+        # Text box for job description. 
         context = st.text_area(
             "Enter Job Description", 
             max_chars=MAX_CHARS_JOB_DESCRIPT
@@ -90,18 +90,18 @@ def main():
             text=""
         )
            
-        # Check if the session state has the 'processed' attribute
+        # Check if the session state has the 'processed' attribute.
         if not hasattr(st.session_state, 'processed'):
             st.session_state.processed = False
 
-        # Only process if the 'processed' flag is not set
+        # Only process if the 'processed' flag is not set.
         if audio_bytes and not st.session_state.processed:
             
-            # Writing audio bytes to the file
+            # Writing audio bytes to the file.
             with open("TTS.wav", mode="wb") as f:
                 f.write(audio_bytes)
 
-            # Reading from the file and translating
+            # Reading from the file and translating.
             with open("TTS.wav", mode="rb") as f:  
                 response = openai.Audio.translate("whisper-1", f)["text"]
 
