@@ -51,7 +51,7 @@ AI:"""
 
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def generate_chat_response(text: str, template=template):
 
     llm = ChatOpenAI(
