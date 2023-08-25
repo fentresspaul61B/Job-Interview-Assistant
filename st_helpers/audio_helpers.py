@@ -81,7 +81,7 @@ def generate_chat_response(text: str, template=template):
 
 
 
-@st.cache_data()
+@st.cache_resource
 def configure_lang_chain(template=template):
 
     llm = ChatOpenAI(
