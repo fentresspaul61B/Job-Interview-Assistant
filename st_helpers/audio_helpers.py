@@ -147,28 +147,6 @@ def get_chat_lang_chain_response(text, lang_chain_conversation):
     return response
 
 
-def get_chat_gpt_response(prompt, context=CONTEXT_PROMPT):
-    """
-    Calls the chat GPT API with context.
-    """
-    
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[
-            {
-                "role": "system",
-                "content": context
-            },
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ]
-    )
-
-    return response['choices'][0]["message"]["content"]
-
-
 @st.cache_data()
 def set_open_ai_token():
     """
@@ -206,10 +184,20 @@ def load_eleven_labs_voice():
             ELEVEN_LABS_TOKEN = json.load(f)["ELEVEN_LABS_TOKEN"]
 
     
+    # Configure token.
     set_api_key(ELEVEN_LABS_TOKEN)
+    
+    # List available voices from eleven labs.
     voices = Voices.from_api()  
+    
+    # Pick the voice.
     my_voice = voices[-1]
+    
+    # Settting the consistency in tonality to the voice.
     my_voice.settings.stability = 1.0
+    
+    # Setting the ammount of similarity to chose voice, higher levels 
+    # can create audio artifacts. 
     my_voice.settings.similarity_boost = .5
     
     return my_voice
@@ -220,11 +208,14 @@ def generate_eleven_labs_audio(text: str, voice: str) -> bytes:
     Generates realistic speech from eleven labs API, and returns audio 
     bytes.
     """
+
+    # Creates audio bytes of realistic sounding voice.
     audio = generate(
         text=text,
         voice=voice,
         model="eleven_monolingual_v1"
     )
+
     return audio
 
 
@@ -232,17 +223,23 @@ def autoplay_audio_from_bytes(audio_data: bytes):
     """
     Autoplays audio from a byte string.
     """
-
+    
+    # Convert audio bytes into base 64 string.
     b64 = base64.b64encode(audio_data).decode()
+
+    # CSS to enable streamlit to auto play.
     md = f"""
         <audio autoplay="true">
         <source src="data:audio/wav;base64,{b64}" type="audio/wav">
         </audio>
         """
+    
+    # Enabling the custom CSS for streamlit.
     st.markdown(
         md,
         unsafe_allow_html=True,
     )
+
     # st.experimental_rerun()
 
 
@@ -250,8 +247,12 @@ def get_audio_duration(filename: str) -> float:
     """
     Get the duration of an audio file in seconds.
     """
+    
+    # Extract audio meta data.
     info = mediainfo(filename)
+
     duration = float(info['duration'])
+
     return duration
 
 
