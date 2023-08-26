@@ -11,7 +11,7 @@ from streamlit_extras.switch_page_button import switch_page
 
 add_theme(add_gradient=True)
 
-st.title("Home Page")
+st.title("Welcome. 🐠")
 
 start_interview = st.button("Start the Interview!")
 
