@@ -35,9 +35,9 @@ background: linear-gradient(
 TEST_GRADIENT = """
 background: linear-gradient(
     85deg, 
-    rgba(170,255,255,1) 0%, 
-    rgba(246,255,166,1) 33%,
-    rgba(220,255,223,1) 66%,
+    rgba(215,255,255,1 0%, 
+    rgba(250,255,209,1) 33%,
+    rgba(219,255,222,1 66%,
     rgba(227,247,255,1) 100%
 );
 """ 
