@@ -45,9 +45,9 @@ background: linear-gradient(
 SUNSET_GRADIENT = """
 background: linear-gradient(
     90deg, 
-    rgba(255,203,229,1) 0%, 
-    rgba(255,255,175,1) 35%, 
-    rgba(255,213,182,1) 100%
+    rgba(255,223,239,1) 0%, 
+    rgba(255,255,198,1) 35%, 
+    rgba(255,231,214,1) 100%
 );
 """
 
