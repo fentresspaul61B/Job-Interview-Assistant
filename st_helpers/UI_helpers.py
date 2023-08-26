@@ -40,7 +40,16 @@ background: linear-gradient(
     rgba(219,255,222,1) 66%,
     rgba(227,247,255,1) 100%
 );
-""" 
+"""
+
+SUNSET_GRADIENT = """
+background: linear-gradient(
+    90deg, 
+    rgba(255,203,229,1) 0%, 
+    rgba(255,255,175,1) 35%, 
+    rgba(255,213,182,1) 100%
+);
+"""
 
 PRODUCTION_FONT_URL = "https://fonts.googleapis.com"
 
@@ -134,7 +143,7 @@ def apply_gradient_to_st_page(
 
 
 def apply_home_page_gradient(
-        gradient: str = BRIGHT_GRADIENT,
+        gradient: str = SUNSET_GRADIENT,
         font_url: str = PRODUCTION_FONT_URL,
         font:     str = PRODUCTION_GOOGLE_FONT,
         class_to_alter: str = "main css-uf99v8 ea3mdgi5" 
@@ -208,7 +217,7 @@ def add_theme(add_gradient=False):
     apply_font_to_st_page()
     if add_gradient: 
         apply_gradient_to_st_page( 
-            BRIGHT_GRADIENT,
+            SUNSET_GRADIENT,
             class_to_alter = "css-6qob1r eczjsme3",
         )
     
