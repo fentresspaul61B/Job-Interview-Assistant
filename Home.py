@@ -9,7 +9,7 @@ from st_helpers.UI_helpers import add_theme
 from streamlit_extras.switch_page_button import switch_page
 
 
-# add_theme(add_gradient=True)
+add_theme(add_gradient=True)
 
 st.title("Home Page")
 
@@ -18,6 +18,5 @@ start_interview = st.button("Start the Interview!")
 if start_interview:
     switch_page("Interview")
 
-
-add_theme(add_gradient=True)
+# add_theme(add_gradient=True)
 
