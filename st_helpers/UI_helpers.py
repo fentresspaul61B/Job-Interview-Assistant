@@ -132,7 +132,7 @@ def apply_gradient_to_st_page(
     st.markdown(streamlit_style, unsafe_allow_html=True)
 
 
-def add_theme():
+def add_theme(add_gradient=False):
     """
     This function applies a consistent theme for each page in the front end.
     There are 3 steps for adding the theme. 
@@ -149,15 +149,8 @@ def add_theme():
 
     # 1. Change font.
     apply_font_to_st_page()
-
-    # apply_gradient_to_st_page(
-    #     LIGHT_GRADIENT, 
-    #     class_to_alter = "svg-inline--fa fa-square fa-3x")
     
-
-
-
-    # 2. Dynamic gradient background.
-    # apply_gradient_to_st_page(LIGHT_GRADIENT)
+    if add_gradient:
+        apply_gradient_to_st_page(LIGHT_GRADIENT)
     
 

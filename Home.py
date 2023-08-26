@@ -2,7 +2,9 @@ import streamlit as st
 
 from st_helpers.UI_helpers import add_theme
 from streamlit_extras.switch_page_button import switch_page
-add_theme()
+
+
+add_theme(apply_gradient=True)
 
 st.title("Home Page")
 
