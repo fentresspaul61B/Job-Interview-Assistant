@@ -15,9 +15,9 @@ apply_home_page_gradient()
 
 st.title("MLE Interview Assistant")
 
-st.write("Helping engineers practice realistic and targeted Machine Learning interviews.")
+st.header("Helping engineers practice realistic and targeted Machine Learning interviews.")
 
-st.header("Welcome. 🐠")
+st.subheader("Welcome. 🐠")
 
 
 st.write(
