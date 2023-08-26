@@ -208,7 +208,7 @@ def add_theme(add_gradient=False):
     apply_font_to_st_page()
     if add_gradient: 
         apply_gradient_to_st_page( 
-            TEST_GRADIENT,
+            LIGHT_GRADIENT,
             class_to_alter = "css-6qob1r eczjsme3",
         )
     
