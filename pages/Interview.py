@@ -90,7 +90,7 @@ def main():
             pause_threshold=PAUSE_THRESHOLD,
             icon_name="square",
             recording_color="#e8b62c",
-            neutral_color="#6aa36f",
+            neutral_color="#ffae1d",
             text=""
         )
            
