@@ -133,6 +133,62 @@ def apply_gradient_to_st_page(
 
 
 
+def apply_home_page_gradient(
+        gradient: str,
+        font_url: str = PRODUCTION_FONT_URL,
+        font:     str = PRODUCTION_GOOGLE_FONT,
+        class_to_alter: str = "main css-uf99v8 ea3mdgi5" 
+    ):
+    """
+    This function uses css and streamlit markdown to apply a morphing 
+    gradient to the background of the page. The google font has to be 
+    re-applied otherwise this layer will contain the default font.
+
+    There are warning about using HTML elements that may change, so this
+    is something I need to watch out for during deployment, and in prod.
+
+    Inputs:
+        gradient: str = any number of RGB colors, and their percents to  
+        be applied.
+        font_url: str = The google url to the font.
+        font: str = The remaining css code to execute the google url.
+    """
+ 
+    streamlit_style = f"""
+         <style>
+        @import url('{font_url}/{font}');
+       
+        @keyframes gradientBackground {{
+            0% {{
+                background-position: 100% 0%;
+            }}
+            25% {{
+                background-position: 50% 50%;
+            }}
+            50% {{
+                background-position: 0% 100%;
+            }}
+            75% {{
+                background-position: 50% 50%;
+            }}
+            100% {{
+                background-position: 100% 0%;
+            }}
+        }}
+
+        html, body [class*="{class_to_alter}"] {{
+            font-family: 'Roboto', sans-serif !important;
+            {gradient}
+            background-size: 200% 200%;
+            animation: gradientBackground 3s infinite;
+        }}
+        </style>
+    """
+
+    st.markdown(streamlit_style, unsafe_allow_html=True)
+
+
+
 def add_theme(add_gradient=False):
     """
     This function applies a consistent theme for each page in the front end.
