@@ -51,6 +51,15 @@ background: linear-gradient(
 );
 """
 
+DARK_SUNSET_GRADIENT = """
+background: linear-gradient(
+    90deg, 
+    rgba(161,63,112,1) 0%, 
+    rgba(170,170,87,1) 35%, 
+    rgba(159,105,66,1) 100%
+);
+"""
+
 PRODUCTION_FONT_URL = "https://fonts.googleapis.com"
 
 PRODUCTION_GOOGLE_FONT = "css2?family=Roboto:wght@100&display=swap" 
