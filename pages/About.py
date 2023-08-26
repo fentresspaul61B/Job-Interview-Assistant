@@ -21,4 +21,4 @@ C. Text from user is turned into a prompt using LangChain. and response is gener
 D. Response is converted from text to speech using ElevenLabs."""
 )
 #
-st.image("images/MLE_interview_diagram.png", use_column_width=False)
+st.image("images/MLE_interview_diagram.png")
