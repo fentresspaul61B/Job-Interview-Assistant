@@ -38,7 +38,7 @@ from st_helpers.UI_helpers import add_theme
 import openai
 
 # Alters default text and background colors.
-add_theme()
+add_theme(add_gradient=True)
 
 # Used to save user and chatbot dialog.
 DIALOG = []
