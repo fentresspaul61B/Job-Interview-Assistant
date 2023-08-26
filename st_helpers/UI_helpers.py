@@ -23,7 +23,7 @@ background: linear-gradient(
 );
 """
 
-FLAT_GRADIEN = """
+FLAT_GRADIENT = """
 background: linear-gradient(
     299deg, 
     rgba(222,209,233,1) 0%, 
