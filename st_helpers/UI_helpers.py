@@ -212,7 +212,7 @@ def add_theme(add_gradient=False):
     
     st.set_page_config(
         page_title="MLE Interview Assistant",
-        page_icon="🐠",
+        page_icon="🌆",
         layout="centered"
     )
 

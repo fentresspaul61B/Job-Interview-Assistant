@@ -17,7 +17,7 @@ st.title("MLE Interview Assistant")
 
 st.header("Helping engineers practice realistic and targeted Machine Learning interviews.")
 
-st.subheader("Welcome. 🐠")
+st.subheader("Welcome. 🌆")
 
 
 st.write(
