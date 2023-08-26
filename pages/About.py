@@ -16,7 +16,7 @@ st.write(
 """Single shot prompt engineering was applied, along with summarized memory in order to guide the LLM to role play as an interviewer, and ask relevant questions in a back and forth dialog format.""")
 
 
-st.write("A. User Speaks into APP.")
+st.write("A. User Speaks into App.")
 
 #
 st.write("B. Whisper translates speech to text.")
