@@ -204,7 +204,7 @@ def add_theme(add_gradient=False):
     )
 
     # 1. Change font.
-    apply_font_to_st_page()
+    # apply_font_to_st_page()
     
     
     apply_gradient_to_st_page(LIGHT_GRADIENT)
