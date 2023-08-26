@@ -52,13 +52,7 @@ background: linear-gradient(
 """
 
 DARK_SUNSET_GRADIENT = """
-background: linear-gradient(
-    90deg, 
-    rgba(161,63,112,1) 0%, 
-    rgba(170,170,87,1) 35%, 
-    rgba(159,105,66,1) 100%
-);
-"""
+background: linear-gradient(90deg, rgba(161,127,144,1) 0%, rgba(168,168,143,1) 35%, rgba(173,153,138,1) 100%);"""
 
 PRODUCTION_FONT_URL = "https://fonts.googleapis.com"
 
