@@ -11,7 +11,7 @@ from streamlit_extras.switch_page_button import switch_page
 
 add_theme(add_gradient=True)
 
-apply_home_page_gradient()
+# apply_home_page_gradient()
 
 st.title("MLE Interview Assistant")
 
