@@ -8,9 +8,9 @@ from PIL import Image
 LIGHT_GRADIENT = """
 "background: linear-gradient(
     299deg, 
-    rgba(250,244,255,1) 0%, 
-    rgba(244,255,237,1) 45%, 
-    rgba(244,253,255,1) 100%
+    rgba(254,237,255,1) 0%, 
+    rgba(238,254,255,1) 45%, 
+    rgba(235,255,237,1) 100%
 );
 """
 
@@ -208,7 +208,7 @@ def add_theme(add_gradient=False):
     apply_font_to_st_page()
     if add_gradient: 
         apply_gradient_to_st_page( 
-            FLAT_GRADIENT,
+            LIGHT_GRADIENT,
             class_to_alter = "css-6qob1r eczjsme3",
         )
     
