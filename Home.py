@@ -13,7 +13,16 @@ add_theme(add_gradient=True)
 
 apply_home_page_gradient()
 
-st.title("Welcome. 🐠")
+st.title("MLE Interview Assistant")
+
+st.write("Helping engineers practice realistic and targeted Machine Learning interviews.")
+
+st.header("Welcome. 🐠")
+
+
+st.write(
+"""Welcome to your personal Machine Learning Engineering (MLE) interview simulation. This project utilizes generative AI to simulate realistic MLE interviews, based on the job descriptions you provide."""
+)
 
 start_interview = st.button("Start the Interview!")
 
