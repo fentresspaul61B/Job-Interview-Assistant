@@ -134,7 +134,7 @@ def apply_gradient_to_st_page(
 
 
 def apply_home_page_gradient(
-        gradient: str,
+        gradient: str = TEST_GRADIENT,
         font_url: str = PRODUCTION_FONT_URL,
         font:     str = PRODUCTION_GOOGLE_FONT,
         class_to_alter: str = "main css-uf99v8 ea3mdgi5" 
