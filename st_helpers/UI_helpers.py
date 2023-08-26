@@ -7,7 +7,7 @@ from PIL import Image
 
 LIGHT_GRADIENT = """
 "background: linear-gradient(
-    299deg, 
+    90deg, 
     rgba(254,237,255,1) 0%, 
     rgba(238,254,255,1) 45%, 
     rgba(235,255,237,1) 100%
