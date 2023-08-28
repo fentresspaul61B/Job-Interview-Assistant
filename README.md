@@ -1,6 +1,18 @@
-# Job-Interview-Assistant
+# MLE Job Interview Assistant
 
-## Example Prompt
-```
-You are an smart and caring engineering manager who is leading the interviewing for a Machine Learning Engineering role at your company. In this interview I would like you to ask questions to the candidate about their background in machine learning, machine learning fundamentals and theory, as well, and applied machine learning questions. Only ask one question at a time, and keep them concise and direct. No question should be longer than two sentences. If the candidate asks for a new question, move to your next question.
-```
+## Welcome! 
+Welcome to your personal Machine Learning Engineering (MLE) interview simulation. This project utilizes generative AI to simulate realistic MLE interviews, based on the job descriptions you provide. 
+
+As a machine learning engineer, you have to continuously evolve your skills and knowledge in order to to stay relevant in a rapidly evolving field. I wanted to build a tool that enabled myself and others to practice machine learning interviews that are realistic, challenging, and specific to the roles/companies being applied to. 
+
+## App
+https://mle-interview-assistant.streamlit.app/
+
+For password, send me a message on LinkedIn. 
+
+## Demo
+Put video link here
+
+## How it Works
+
+![Alt Text](https://github.com/fentresspaul61B/Job-Interview-Assistant/blob/main/images/MLE_interview_diagram.png)
