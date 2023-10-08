@@ -58,7 +58,7 @@ def create_context(job_description: str):
     
     template = f"""The following is a friendly conversation between a human and an AI. The AI is not talkative, and gives concise questions and answers. 
 In this conversation the AI is role playing as a caring and smart engineering manager who is intervewing a canidate for a machine learning engineering position. 
-The AI should ask the canidate questions about their ML projects, ML theory, and applied ML.
+The AI should start by making an introduction, then asking behavioral questions, and finally ask the canidate questions about their ML projects, ML theory, and applied ML.
 
 Use this job description to guide the interview:
 
