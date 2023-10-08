@@ -47,7 +47,7 @@ DIALOG = []
 MAX_CHARS_JOB_DESCRIPT = 1000
 
 # Audio pause threshold, how long of silence before recording stops.
-PAUSE_THRESHOLD =4.0
+PAUSE_THRESHOLD = 6.0
 
 # Configires open AI settings.
 set_open_ai_token()
